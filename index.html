@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>活在浙大</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+		<link rel="stylesheet" href="dist/style.css">
+		<style>
+		  section {
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-start;
+			height: 100%;
+			  /*background-image: url('bg.png');
+			  background-size: cover;  背景图片覆盖整个 section */
+			  /*  background-position: center;背景图片居中 */
+		  }
+		</style>
+
+	</head>
+	<body>
+		<div class="reveal">
+		  <div class="slides">
+
+			<section >
+				<section data-markdown data-background="bg.png">
+					<script type="text/template">
+			<div class="middle center">
+			<div style="width: 100%">
+
+			# 浙大生活
+			尘心&nbsp;&nbsp; <span class="dynamic-date" id="current-date"></span>
+
+
+			</div>
+			</div>
+			</script>
+
+				</section></section>
+
+
+			    <section data-background="bg.png">
+					<section data-markdown>
+					## 幻燈片 1
+					包含一些文本和一個[鏈接](https://hakim.se)的段落。
+					---
+					## 幻燈片 2
+					---
+					## 幻燈片 3
+					</section>
+				</section>
+		  </div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.1/reveal.js"></script>
+		<script>
+		// Reveal.js 初始化
+		Reveal.initialize();
+
+		// 获取当前日期
+		const currentDate = new Date();
+
+		// 格式化日期为 YYYY年MM月DD日
+		const formattedDate = `${currentDate.getFullYear()}/${currentDate.getMonth() + 1}/${currentDate.getDate()}`;
+
+		// 将日期插入到页面中
+		document.getElementById('current-date').textContent = formattedDate;
+		</script>
+	</body>
+</html>
