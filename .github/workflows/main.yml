@@ -10,15 +10,15 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@master
-    
-    - name: Push update file to slides repo
-      uses: dmnemec/copy_file_to_another_repo_action@3fe42250d47e0764da9de9939b151b09a26e5857
-      env:
-        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      uses: actions/checkout@v4
+        
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
       with:
-        source_file: 'slides/site/.'
-        destination_repo: 'xinchen-sea/slides'
-        destination_branch: 'master'
-        destination_folder: 'slides'
-        user_name: 'xinchen-sea'
+        node-version: ${{ matrix.node-version }}
+
+    - run: npm install
+    - run: npm run build --if-present
+    - run: npm test
+      env:
+        CI: true
