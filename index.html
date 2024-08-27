@@ -23,6 +23,41 @@
 			  background-size: cover;  背景图片覆盖整个 section */
 			  /*  background-position: center;背景图片居中 */
 		  }
+		  .large-font h1 {
+			font-size: 3em;
+		  }
+		  .large-font p {
+			font-size: 2em;
+		  }
+		  .large-font h6 {
+			  font-size: 0.7em;
+			  font-weight: 400;
+		  }
+		  .fragment.blur {
+			filter: none;
+		  }
+		  .fragment.blur.visible {
+			filter: blur(5px);
+		  }
+    .flex-container {
+      display: flex;
+      justify-content: space-between; /* 图片间距 */
+      align-items: center; /* 垂直居中 */
+
+    }
+    .flex-container img {
+      width: 30%; /* 每张图片的宽度 */
+      height: auto;
+	  margin:10px auto;
+    }
+    .video-container {
+      display: flex;
+      justify-content: center; /* 水平居中 */
+      align-items: center; /* 垂直居中 */
+      height: 70%; /*设置容器的高度为视口高度 */
+      /* background-color: #f0f0f0; 可选：设置背景颜色 */
+    }
+
 		</style>
 
 	</head>
@@ -30,33 +65,75 @@
 		<div class="reveal">
 		  <div class="slides">
 
-			<section >
-				<section data-markdown data-background="bg.png">
-					<script type="text/template">
-			<div class="middle center">
-			<div style="width: 100%">
 
-			# 浙大生活
-			尘心&nbsp;&nbsp; <span class="dynamic-date" id="current-date"></span>
+			<section id="fragments">
+				<section data-background="bg.png">
+			<div class="middle center"><div style="width: 100%">
+				<div class="large-font">
 
+				<p class="fragment shrink">
+					<span class="fragment strike">浙大生活</span>
+				</p>
 
-			</div>
-			</div>
-			</script>
+				<h1 class="fragment fade-up">活在浙大</h1>
 
-				</section></section>
+				<h6>&nbsp;</h6>
+				<h6 class="fragment">尘心&nbsp;&nbsp; <span class="dynamic-date" id="current-date"></span></h6>
 
+				<aside class="notes">
+					This slide has fragments which are also stepped through in the notes window.
+				</aside>
+				</div>
+			</div></div>
 
-			    <section data-background="bg.png">
-					<section data-markdown>
-					## 幻燈片 1
-					包含一些文本和一個[鏈接](https://hakim.se)的段落。
-					---
-					## 幻燈片 2
-					---
-					## 幻燈片 3
-					</section>
 				</section>
+			</section>
+
+
+			<section data-background="bg.png">
+				<section data-markdown>
+					<textarea data-template>
+				## 浙大生活公众号
+				[《浙大生活服务手册》，你值得拥有！](https://mp.weixin.qq.com/s/e5hIv7GCRlUEkmr5c3J5ng)
+					 <div class="flex-container">
+						<img data-src="images/640.webp" alt="描述" style="width:30%; height:auto; display:flex;">
+						<img data-src="images/2.jpg" alt="描述" style="width:30%; height:auto;  display:flex;">
+						<img data-src="images/3.jpg" alt="描述" style="width:30%; height:auto;  display:flex;">
+					 </div>
+				---
+				## 浙大生活公众号
+				<iframe src="zdfwsc.pdf" width="99%" height="80%"  scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" ></iframe>
+				---
+				## 浙大生活公众号
+
+				<div class="center">
+				<p class="fragment shrink">啊?! 那我的分享……到此为止吧 orz </p>
+				<span class="fragment fade-up"><span class="fragment strike">谢谢大家！</span></span>
+				<p><span class="fragment">就这？</span></p>
+				<p><span class="fragment">NO！<span class="fragment">手册有用的话，要学长干嘛</span></span></p>
+				<span class="fragment">这才刚刚开始</span>
+				</div>
+					</textarea>
+				</section>
+			</section>
+
+
+			  <section data-background="bg.png"><section data-markdown><textarea data-template>
+				  ## 活在浙大
+				  <p>首先，看个没那么相关的视频片段<br>
+				  节选自：如何抵抗大学环境带来的松懈？ _ 开学大实话【宋浩老师官方】_bilibili</p>
+					<div class="video-container">
+					  <video controls>
+						  <source data-src="songhao.mp4" type="video/mp4">
+					  </video>
+					</div>
+				  </textarea></section>
+			  <section data-markdown><textarea data-template>
+				  ## 享受亿下生活
+			  </textarea></section>
+
+
+
 		  </div>
 		</div>
 
